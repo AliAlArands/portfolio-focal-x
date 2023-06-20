@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    padding-top: 100px;
+    padding-top: 116px;
 }
 
 .home-section::before {
@@ -26,6 +26,7 @@
     font-weight: var(--fw-bold);
     color: var(--clr-primary);
     font-size: 45px;
+    margin-top: 158px;
     margin-bottom: 39px;
 }
 
@@ -53,6 +54,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    padding-top: 10px;
 }
 
 .home-section .home-social .home-social-a {
@@ -110,6 +112,7 @@
         justify-content: center;
         gap: 19px;
         margin-bottom: 86px;
+        padding-top: 0;
     }
 
     .home-section .home-social .home-social-a {
