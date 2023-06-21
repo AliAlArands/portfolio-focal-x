@@ -29,3 +29,32 @@ function handleNavbarColor() {
         navbar.style.backgroundColor = null;
     }
 }
+const sections = document.querySelectorAll("section[id]");
+console.log(sections)
+      window.addEventListener("scroll", navHighlighter);
+          
+      function navHighlighter() {
+        let scrollY = window.pageYOffset;
+        
+        sections.forEach(current => {
+          const sectionHeight = current.offsetHeight;
+          const sectionTop = current.offsetTop - 200;
+          let sectionId = current.getAttribute("id");
+                if (
+                  scrollY > sectionTop &&
+                  scrollY <= sectionTop + sectionHeight
+                  ){
+                    console.log(sectionId)
+                    document.querySelectorAll("a[href*=" + sectionId + "]").forEach(element => {
+                        element.parentElement.classList.add("active-nav");
+                        element.parentElement.classList.add("active-mobile");
+                    });
+                  } else {
+                    document.querySelectorAll("a[href*=" + sectionId + "]").forEach(element => {
+                        if(element.parentElement.classList.contains("active-nav"))
+                        element.parentElement.classList.remove("active-nav");
+                        if(element.parentElement.classList.contains("active-mobile"))
+                        element.parentElement.classList.remove("active-mobile");
+                  })
+                }
+            })}
