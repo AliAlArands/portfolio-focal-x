@@ -26,3 +26,19 @@ new Swiper(".clients-swiper", {
       },
     }
 });
+const clients = document.querySelector(".swiper-wrapper")
+async function fetchclients(){
+  await fetch ("http://localhost:8000/api/clients")
+  .then((res) => res.json())
+  .then((res) => (data=res.clients));
+  console.log(res);
+  data.forEach(ele => {
+    clients.innerHTML += `
+    <div class="swiper-slide">
+        <img src=${ele.image} />
+    </div>
+    `
+    
+  });
+}
+fetchclients();
