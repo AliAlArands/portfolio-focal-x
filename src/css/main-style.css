@@ -73,6 +73,7 @@ section {
   width: max-content;
   margin: auto;
   margin-bottom: 2rem;
+  padding-top: 100px;
 }
 
 .main-heading::before {

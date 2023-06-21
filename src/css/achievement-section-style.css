@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  
+  /* background-image: url(./../imgs/background.png); */
 }
 
 .achievements-section .main-heading::before {
@@ -33,7 +33,7 @@
   padding-left: 1rem;
   padding-bottom: 4px;
   border-left: 3px solid var(--clr-accent);
-  max-width: 1000px;
+  /* max-width: 1000px; */
 }
 
 .achievement__header {
