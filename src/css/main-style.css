@@ -88,7 +88,7 @@ section {
   text-align: center;
 }
 
-.backgrounded-section::before {
+/* .backgrounded-section::before {
   content: "";
   background-image: url(/imgs/background-2.png);
   background-size: cover;
@@ -96,6 +96,10 @@ section {
   opacity: 0.2;
   z-index: -1;
   inset: 0;
+} */
+.backgrounded-image{
+  background-image: url(/imgs/back7.png);
+  background-size: cover;
 }
 
 @media(max-width: 768px) {
