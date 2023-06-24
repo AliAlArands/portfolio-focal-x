@@ -27,19 +27,29 @@ new Swiper(".clients-swiper", {
     }
 });
 
-const clients = document.querySelector(".swiper-wrapper")
-async function fetchclients(){
-  await fetch ("http://localhost:8000/api/clients")
-  .then((res) => res.json())
-  .then((res) => (data=res.clients));
-  console.log(res);
+var requestOptions = {
+  method: 'GET',
+  redirect: 'follow'
+};
+
+let data = [];
+const clients = document.querySelector(".clients-section .swiper-wrapper");
+
+async function getclients() {
+ await fetch("http://localhost:8000/api/clients", requestOptions)
+  .then(res => res.json())
+  .then(res => data=res.clients)
+  .catch(error => console.log('error', error));
+  
   data.forEach(ele => {
+    
     clients.innerHTML += `
     <div class="swiper-slide">
-        <img src=${ele.image} />
+        <img src=${ele.image_url}/>
     </div>
     `
     
-  });
+  }
+  );
 }
-fetchclients();
+getclients();
