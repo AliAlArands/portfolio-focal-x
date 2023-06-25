@@ -38,7 +38,7 @@ console.log(sections)
         
         sections.forEach(current => {
           const sectionHeight = current.offsetHeight;
-          const sectionTop = current.offsetTop - 200;
+          const sectionTop = current.offsetTop - 100;
           let sectionId = current.getAttribute("id");
                 if (
                   scrollY > sectionTop &&
