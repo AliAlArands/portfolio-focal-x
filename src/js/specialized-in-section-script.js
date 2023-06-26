@@ -21,7 +21,7 @@ new Swiper(".specialized-in-swiper", {
 		},
 	},
 });
-let contianarr =  document.querySelector(".swiper-wrapper")
+let contianarr =  document.querySelector(".swiper-wrapper-special")
 
 function appenNewprodact(description,title){
 	let titlee = document.createElement("h1")
@@ -43,15 +43,9 @@ function appenNewprodact(description,title){
     continar.appendChild(fqswiper)
     contianarr.appendChild(continar)
 }
-async function fetchcards(start,end) {
-    await fetch("http://127.0.0.1:8000/api/specializations")
-    .then((result) => result.json())
-    .then((result) => (data=result.products));
-    for( i = start; i < end; i++ ) { 
-        let item = data[i];
-        appenNewprodact( item.description , item.title);
-}}
-    function topteen(start,end){
-        fetchcards(start ,end)
-    }
-    topteen(start = 0, end = 13);
+fetch("http://127.0.0.1:8000/api/specializations")
+    .then(res => res.json())
+    .then(res => res = res.specializations)
+    .then(res => res.forEach(element => {
+      appenNewprodact(element.body,element.title)
+    }))

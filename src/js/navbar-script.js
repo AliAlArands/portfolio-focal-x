@@ -30,7 +30,6 @@ function handleNavbarColor() {
     }
 }
 const sections = document.querySelectorAll("section[id]");
-console.log(sections)
       window.addEventListener("scroll", navHighlighter);
           
       function navHighlighter() {
@@ -44,7 +43,6 @@ console.log(sections)
                   scrollY > sectionTop &&
                   scrollY <= sectionTop + sectionHeight
                   ){
-                    console.log(sectionId)
                     document.querySelectorAll("a[href*=" + sectionId + "]").forEach(element => {
                         element.parentElement.classList.add("active-nav");
                         element.parentElement.classList.add("active-mobile");

@@ -32,7 +32,6 @@ if(currentSection === "photos-taken-by-me") { // also to fit
 }else {
   lastRes = currentSection;
 }
-console.log(lastRes);
 
 fetch("http://127.0.0.1:8000/api/portfolios").then((result)=>{
   let myData = result.json();
@@ -42,15 +41,12 @@ fetch("http://127.0.0.1:8000/api/portfolios").then((result)=>{
     
     
     );
-  console.log(res)
   return res;
 }).then((res) => {
-  console.log(res)
   if(res.length === 0) {
     console.log("no portfolios");
   }else{
     res.forEach(element => {
-      console.log(element)
       const s1 = document.createElement("div");
       s1.classList.add("swiper-slide");
       const s2 = document.createElement("div");
@@ -69,7 +65,6 @@ fetch("http://127.0.0.1:8000/api/portfolios").then((result)=>{
       a1.setAttribute("href",`${element.link}`);
       a1.innerText = "view >";
       s3.append(a1);
-      const father = document.querySelector(".swiper-wrapper");
       father.append(s1)
     });
   }
@@ -87,7 +82,6 @@ for (var i = 0; i < btns.length; i++) {
       father.removeChild(father.firstChild);
     }
     currentSection  = this.innerText.toLowerCase().replaceAll(' ','-');
-    console.log(currentSection)
   if(currentSection === "photos-taken-by-me") { // also to fit 
   lastRes = "photos";
 }else {
@@ -101,15 +95,12 @@ for (var i = 0; i < btns.length; i++) {
     
     
     );
-  console.log(res)
   return res;
 }).then((res) => {
-  console.log(res)
   if(res.length === 0) {
     console.log("no portfolios");
   }else{
     res.forEach(element => {
-      console.log(element)
       const s1 = document.createElement("div");
       s1.classList.add("swiper-slide");
       const s2 = document.createElement("div");
@@ -128,7 +119,6 @@ for (var i = 0; i < btns.length; i++) {
       a1.setAttribute("href",`${element.link}`);
       a1.innerText = "view >";
       s3.append(a1);
-
       father.append(s1)
     });
   }

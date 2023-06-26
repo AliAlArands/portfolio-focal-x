@@ -1,3 +1,7 @@
+::selection {
+  color: black;
+  background-color:var(--clr-accent) ;
+}
 .achievements-section {
   font-size: 10px;
   display: flex;
@@ -5,7 +9,6 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  /* background-image: url(./../imgs/background.png); */
 }
 
 .achievements-section .main-heading::before {
@@ -30,10 +33,12 @@
 }
 
 .achievement-box {
+  width: 100%;
   padding-left: 1rem;
   padding-bottom: 4px;
   border-left: 3px solid var(--clr-accent);
-  /* max-width: 1000px; */
+  background-color: rgba(0, 0, 0, 0.578);
+  padding: 40px 30px;
 }
 
 .achievement__header {

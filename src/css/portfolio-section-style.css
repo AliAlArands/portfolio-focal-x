@@ -84,9 +84,12 @@
 }
 
 .port-sec .port-card-text a {
+  text-decoration: none;
   font-weight: 300;
+  padding-bottom: 2px;
   font-size: 16px;
   color: var(--clr-accent);
+  border-bottom:2px solid var(--clr-accent) ;
 }
 
 @media(max-width: 768px) {

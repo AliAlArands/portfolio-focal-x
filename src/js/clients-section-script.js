@@ -38,8 +38,7 @@ const clients = document.querySelector(".clients-section .swiper-wrapper");
 async function getclients() {
  await fetch("http://localhost:8000/api/clients", requestOptions)
   .then(res => res.json())
-  .then(res => data=res.clients)
-  .catch(error => console.log('error', error));
+  .then(res => data=res.clients);
   
   data.forEach(ele => {
     
